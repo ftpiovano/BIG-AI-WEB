@@ -12,14 +12,16 @@ This document outlines the non-negotiable design specifications, content and com
 *   **Attributes:** `autoplay`, `muted`, `loop`, `playsinline`, `preload="auto"`.
 
 ### 1.1. Layout System
+*   **Global Reset:** All elements use `box-sizing: border-box`. `html` and `body` use `overflow-x: clip` to prevent horizontal scrolling issues.
 *   **Container:** `max-width: 1300px` for main content areas, centered horizontally.
 *   **Glassmorphism:** All UI containers (cards, headers, team profiles, contact panels) must use `var(--color-background)` and `var(--color-border)` to create a unified glass effect.
 *   **Responsive Grid:**
     *   **Desktop (>= 1024px):** 12-column grid.
     *   **Tablet (768px - 1023px):** 8-column grid.
-    *   **Mobile (< 768px):** 4-column grid.
+    *   **Mobile (< 768px):** 4-column grid. Header simplifies to brand name/logo only; taglines and navigation CTAs are hidden.
 *   **Sections:**
     *   **Transparency:** All major sections must have `background: transparent !important` to reveal the global background video.
+    *   **Mobile Adaptation:** Services cards adapt to full width with fixed heights and integrated visual wrappers.
     *   Appropriate vertical padding to prevent "giant blank areas."
 
 ### 1.2. Typography
@@ -48,7 +50,6 @@ This document outlines the non-negotiable design specifications, content and com
 *   **Scroll Animation:** Subtle reveal animations (e.g., fade-in, slide-up) for sections/elements as they enter the viewport, implemented via `IntersectionObserver` in `script.js`.
 *   **Reduced Motion Support:** All animations must respect the `prefers-reduced-motion` media query (CSS).
 *   **Smooth Scroll:** Clicking on internal anchor links (`href="#section-id"`) should result in smooth scrolling (CSS `scroll-behavior: smooth`).
-*   **Parallax Scroll Effect:** Implement a smooth parallax scroll effect for designated elements (e.g., floating cards). **The `maxTravel` for parallax movement is `70px`.**
 
 ## 2. Content & Component Requirements
 
@@ -93,7 +94,6 @@ This document outlines the non-negotiable design specifications, content and com
         *   "Process Optimization"
         Each item starts with a small circular blue check icon. Text dark gray/black, medium weight. Spacing between items moderate.
     *   CTA button: "Get Started" with right chevron/arrow icon. Dark navy/near-black fill, white text, rounded-pill shape, subtle shadow.
-*   **Scroll effect requirement (floating square card):** As the user scrolls through this section, the small floating white square card should move slightly (parallax), smoothly, without jitter (transform for performance: translate3d). **The `maxTravel` for parallax movement is `70px`.**
 
 ### 2.3. Meet Our Expert Team Section
 *   **Content:**

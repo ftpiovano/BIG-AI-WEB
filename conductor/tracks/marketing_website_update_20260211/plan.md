@@ -15,6 +15,10 @@
 - [x] Task: Implement Glassmorphic Unified Styling
     - [x] Implement Feature: Update `styles.css` with global rules forcing `var(--color-background)` and `var(--color-border)` on all card-like components.
     - [x] Implement Feature: Add `backdrop-filter: blur(8px)` to the sticky header.
+- [x] Task: Refine Mobile Responsiveness and Layout Stability
+    - [x] Implement Feature: Add global `box-sizing: border-box` and `overflow-x: clip`.
+    - [x] Implement Feature: Implement mobile-specific header overrides (hide tagline/CTA).
+    - [x] Implement Feature: Optimize Services base-card and visual wrappers for mobile viewports.
 - [x] Task: Define Comprehensive Design Tokens and Base Styles
     - [x] Write Tests: N/A (Visual verification only)
     - [x] Implement Feature: Overwrite `styles.css` with CSS reset, comprehensive design tokens in `:root` (colors, spacing, radius, shadows, font stack).
@@ -49,13 +53,13 @@
 
 ## Phase 3: Hero Section & Trust Elements
 
-- [x] Task: Redesign Hero Section with detailed specification and "star rain" effect
+- [x] Task: Redesign Hero Section with detailed specification and video background
     - [x] Implement Feature: Update index.html with new Hero section HTML structure.
-    - [x] Implement Feature: Update styles.css with new Hero section styling and "star rain" effect.
+    - [x] Implement Feature: Update styles.css with new Hero section styling and hide background glyphs to prioritize video.
 - [x] Task: Implement Services Section with combined content and detailed styling
     - [x] Implement Feature: Update index.html with new Services section HTML structure.
     - [x] Implement Feature: Update styles.css with new Services section styling.
-    - [x] Implement Feature: Add JavaScript for Services section floating card parallax effect.
+    - [x] Implement Feature: N/A - Decided against Services section floating card parallax effect.
 - [x] Task: Implement 'Meet Our Expert Team' Section
     - [x] Implement Feature: Add 'Meet Our Expert Team' section HTML to index.html with detailed member profiles.
     - [x] Implement Feature: Add styles for 'Meet Our Expert Team' section to styles.css.
