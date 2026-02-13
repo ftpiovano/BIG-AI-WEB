@@ -54,6 +54,13 @@
 html, body {
     margin: 0;
     padding: 0;
+    overflow-x: clip;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 body {
@@ -73,8 +80,10 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100vh;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
     z-index: 0;
     overflow: hidden;
     background-color: var(--color-bg-deep); /* Fallback */
@@ -193,6 +202,15 @@ h1, h2, h3, h4, h5, h6 {
 h1 { font-size: var(--font-h1); }
 h2 { font-size: var(--font-h2); }
 p { max-width: 65ch; margin-bottom: var(--space-4); }
+
+img,
+svg,
+canvas,
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
 
 /* ==========================================================================
    5. Buttons
@@ -389,11 +407,28 @@ section:nth-of-type(even) {
 /* Responsive Overrides */
 @media (max-width: 768px) {
     .main-nav {
-        display: none; /* On mobile, we hide the main nav. A hamburger menu would be the next step. */
+        display: none;
     }
 
     .header-cta {
-        display: none; /* Hide the desktop CTA button */
+        display: none;
+    }
+
+    .cta-zone {
+        display: none;
+    }
+
+    .header-container {
+        padding: 0 16px;
+        gap: 12px;
+    }
+
+    .brand-tagline {
+        display: none;
+    }
+
+    .brand-name {
+        font-size: 0.95rem;
     }
 
     .mobile-cta-bar {
@@ -1076,6 +1111,7 @@ section:nth-of-type(even) {
     position: relative;
     display: flex;
     justify-content: center;
+    overflow: clip;
 }
 
 .base-card {
@@ -1087,6 +1123,7 @@ section:nth-of-type(even) {
     height: 500px;
     position: relative;
     box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
+    overflow: clip;
 }
 
 .landscape-image-wrapper {
@@ -1124,6 +1161,25 @@ section:nth-of-type(even) {
     padding: 20px;
     z-index: 10;
     text-align: center;
+}
+
+@media (max-width: 768px) {
+    .base-card {
+        max-width: 100%;
+        height: 430px;
+    }
+
+    .landscape-image-wrapper {
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        border-radius: 0 0 16px 16px;
+    }
+
+    .floating-square-card {
+        right: 12px;
+        top: 12px;
+    }
 }
 
 .floating-square-card .icon {
