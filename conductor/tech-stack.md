@@ -1,16 +1,21 @@
 # Technology Stack
 
 ## Overview
-This project will utilize a minimal, static web stack focused on performance, accessibility, and ease of deployment.
+This project utilizes a modern, static web stack optimized for performance, visual impact, and accessibility. It follows a "less is more" philosophy, avoiding heavy frameworks in favor of clean, performant vanilla technologies.
 
 ## Core Technologies
-*   **HTML5:** For structuring the web content.
-*   **CSS3:** For styling and layout, including responsive design for mobile-first approach.
-*   **JavaScript (ES6+):** Optional, for subtle motion, interactive elements, and enhancing user experience without heavy frameworks.
+- **HTML5:** Semantic structure for optimal SEO and accessibility.
+- **CSS3:** Custom properties (CSS variables) for the Aurora theme, flexbox/grid for responsive layouts, and `backdrop-filter` for glassmorphism effects.
+- **JavaScript (ES6+):** Lightweight vanilla JS for ensuring reliable video playback of the background media across mobile and desktop browsers, including fallback for restricted autoplay.
+- **Video Media:** Optimized H.264 MP4 (`aurora_bg_h264.mp4`) for the global, fixed background.
+- **Typography:** Google Fonts (Inter) for a modern, clean look.
 
-## Key Considerations
-*   **Static Site Generation:** Content will be rendered client-side, suitable for hosting on any static web server or CDN.
-*   **Performance Optimization:** Emphasis on efficient asset loading, minimal script usage, and optimized images to achieve high Lighthouse scores.
-*   **Accessibility (A11y):** Semantic HTML and adherence to WCAG guidelines will be a priority.
-*   **Browser Compatibility:** Targeting modern browsers, with progressive enhancement for older versions where feasible.
-*   **Deployment:** Simple deployment process, potentially involving direct file upload to a web server or integration with a static site hosting service.
+## Key Implementation Features
+- **Global Video Background:** A dedicated `.bg-video` layer (`z-index: 0`, `pointer-events: none`) with a fixed position, containing a muted, autoplaying video and a semi-transparent black overlay.
+- **Layering System:** Uses a `.page` wrapper with `z-index: 1` to ensure content sits reliably above the background video layer.
+- **Glassmorphic UI:** Unified styling for all UI containers (cards, headers, form panels) using semi-transparent fills and borders to maintain legibility and brand consistency.
+- **Performance:** Optimized asset loading and minimal script execution.
+- **Accessibility:** Adherence to semantic standards and focus on readability through strong contrast and whitespace.
+
+## Deployment & Hosting
+- **Static Hosting:** The site is designed for deployment on high-speed CDNs or static hosting providers (e.g., Netlify, Vercel, GitHub Pages).
